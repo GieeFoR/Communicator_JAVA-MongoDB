@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.GridPane?>
+<AnchorPane fx:id="mainPane"
+            prefHeight="600.0"
+            prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="GUI.Controllers.CommunicatorController">
+   <AnchorPane prefWidth="300.0"
+               AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.topAnchor="0.0">
+      <GridPane fx:id="clientName"
+                prefHeight="50.0"
+                prefWidth="300.0"
+                alignment="BOTTOM_CENTER"
+               onMouseClicked="#clickOnUsername"/>
+
+      <Line endX="280"
+            endY="70"
+            startX="20"
+            startY="70"/>
+
+      <Button layoutX="20.0"
+              layoutY="90"
+              minWidth="50.0"
+              onAction="#showContactPaneAction"
+              prefHeight="40.0"
+              prefWidth="260.0"
+              text="Add new conversation"/>
+
+      <TextField fx:id="searchField"
+                 layoutX="30"
+                 layoutY="150"
+                 prefHeight="30"
+                 prefWidth="240"
+                 promptText="Search"
+                 onKeyTyped="#onSearchContactsAction"/>
+
+      <ScrollPane hbarPolicy="NEVER"
+                  vvalue="1.0"
+                  AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="200.0">
+         <VBox fx:id="contactsListBox"/>
+      </ScrollPane>
+   </AnchorPane>
+   <Pane fx:id="titlePane"
+         prefHeight="50"
+         prefWidth="500"
+         AnchorPane.leftAnchor="300.0"
+         AnchorPane.rightAnchor="0.0"
+         AnchorPane.topAnchor="0.0"/>
+   <AnchorPane fx:id="chatPane"
+               AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="300.0"
+               AnchorPane.rightAnchor="0.0"
+               AnchorPane.topAnchor="50.0"
+               visible="false">
+      <TextArea fx:id="typeMessageTextArea"
+                accessibleRole="PARENT"
+                prefHeight="40.0"
+                promptText="Type your message"
+                wrapText="true"
+                AnchorPane.bottomAnchor="20.0"
+                AnchorPane.leftAnchor="20.0"
+                AnchorPane.rightAnchor="70.0"/>
+      <ScrollPane fx:id="chatScrollPane"
+                  accessibleRole="PARENT"
+                  hbarPolicy="NEVER"
+                  vbarPolicy="ALWAYS"
+                  vvalue="1.0"
+                  AnchorPane.bottomAnchor="60.0"
+                  AnchorPane.leftAnchor="20.0"
+                  AnchorPane.rightAnchor="20.0"
+                  AnchorPane.topAnchor="0.0"/>
+      <Button accessibleRole="PARENT"
+              onAction="#sendMessageAction"
+              prefHeight="40.0"
+              prefWidth="70.0"
+              text="Send"
+              AnchorPane.bottomAnchor="20.0"
+              AnchorPane.rightAnchor="20.0"/>
+   </AnchorPane>
+      <AnchorPane fx:id="addContactPane"
+                  AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="300.0"
+                  AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0"
+                  visible="false">
+         <VBox alignment="TOP_CENTER"
+               spacing="10.0"
+               AnchorPane.leftAnchor="20.0"
+               AnchorPane.topAnchor="0.0"
+               AnchorPane.bottomAnchor="0.0"
+               AnchorPane.rightAnchor="20.0">
+            <HBox spacing="10.0">
+               <VBox prefWidth="150.0"
+                     spacing="10.0">
+                  <Label text="Add via:"
+                         wrapText="true"
+                         alignment="TOP_LEFT"
+                         textAlignment="CENTER"
+                         style="-fx-padding: 10 0 0 0;">
+                     <font>
+                        <Font name="Segoe UI"
+                              size="25.0"/>
+                     </font>
+                  </Label>
+                  <Button accessibleRole="PARENT"
+                          onAction="#numberButtonAction"
+                          prefHeight="60.0"
+                          prefWidth="120.0"
+                          text="number">
+                     <font>
+                        <Font name="Segoe UI"
+                              size="20.0"/>
+                     </font>
+                  </Button>
+                  <Button accessibleRole="PARENT"
+                          onAction="#nicknameButtonAction"
+                          prefHeight="60.0"
+                          prefWidth="120.0"
+                          text="login">
+                     <font>
+                        <Font name="Segoe UI"
+                              size="20.0"/>
+                     </font>
+                  </Button>
+               </VBox>
+               <VBox spacing="10.0"
+                     AnchorPane.leftAnchor="200.0"
+                     AnchorPane.rightAnchor="20.0"
+                     alignment="CENTER">
+                  <AnchorPane AnchorPane.leftAnchor="200.0"
+                              AnchorPane.rightAnchor="20.0">
+                     <TextField fx:id="numberTextField"
+                                promptText="Type number"
+                                visible="false"
+                                alignment="CENTER"
+                                AnchorPane.leftAnchor="0.0"
+                                AnchorPane.rightAnchor="0.0"
+                                AnchorPane.topAnchor="50.0">
+                        <font>
+                           <Font name="Segoe UI"
+                                 size="30.0"/>
+                        </font>
+                     </TextField>
+                     <TextField fx:id="usernameTextField"
+                                promptText="Type username"
+                                visible="false"
+                                alignment="CENTER"
+                                AnchorPane.leftAnchor="0.0"
+                                AnchorPane.rightAnchor="0.0"
+                                AnchorPane.topAnchor="50.0">
+                        <font>
+                           <Font name="Segoe UI"
+                                 size="30.0"/>
+                        </font>
+                     </TextField>
+                  </AnchorPane>
+                  <Button fx:id="addUserButton"
+                          accessibleRole="PARENT"
+                          onAction="#addUserAction"
+                          prefHeight="60.0"
+                          prefWidth="120.0"
+                          text="Add User"
+                          visible="false"
+                          alignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI"
+                              size="20.0"/>
+                     </font>
+                  </Button>
+               </VBox>
+            </HBox>
+
+         </VBox>
+         <TextField fx:id="contactNameTextField"
+                    promptText="Type contact name"
+                    alignment="CENTER"
+                    AnchorPane.leftAnchor="20.0"
+                    AnchorPane.rightAnchor="20.0"
+                    AnchorPane.topAnchor="205.0">
+            <font>
+               <Font name="Segoe UI"
+                     size="20.0"/>
+            </font>
+         </TextField>
+         <ScrollPane AnchorPane.topAnchor="255.0"
+                     AnchorPane.leftAnchor="20.0"
+                     AnchorPane.rightAnchor="20.0"
+                     AnchorPane.bottomAnchor="100.0">
+            <VBox fx:id="newContactUsersList"/>
+         </ScrollPane>
+         <Button onAction="#clearContact"
+                 prefWidth="160.0"
+                 prefHeight="60.0"
+                 AnchorPane.bottomAnchor="20.0"
+                 AnchorPane.leftAnchor="20.0"
+                 text="Clear Contact"
+                 textAlignment="CENTER">
+            <font>
+               <Font name="Segoe UI"
+                     size="20.0"/>
+            </font>
+         </Button>
+         <Button onAction="#addContact"
+                 prefWidth="160.0"
+                 prefHeight="60.0"
+                 AnchorPane.bottomAnchor="20.0"
+                 AnchorPane.rightAnchor="20.0"
+                 text="Add Contact"
+                 textAlignment="CENTER">
+            <font>
+               <Font name="Segoe UI"
+                     size="20.0"/>
+            </font>
+         </Button>
+      </AnchorPane>
+</AnchorPane>

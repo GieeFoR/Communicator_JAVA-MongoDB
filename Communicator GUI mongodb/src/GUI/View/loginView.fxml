@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="GUI.Controllers.LoginController"
+            prefHeight="600.0"
+            prefWidth="800.0">
+    <AnchorPane prefWidth="300.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.topAnchor="0.0"
+                AnchorPane.bottomAnchor="0.0">
+        <Label text="Welcome"
+               layoutX="95.0"
+               layoutY="100.0">
+            <font>
+                <Font name="Segoe UI"
+                      size="38.0"/>
+            </font>
+        </Label>
+        <Label text="to communicator"
+               layoutX="100.0"
+               layoutY="150.0">
+            <font>
+                <Font name="Segoe UI"
+                      size="20.0"/>
+            </font>
+        </Label>
+        <Label text="Don't have an account?"
+               layoutX="55.0"
+               layoutY="250.0">
+            <font>
+                <Font name="Segoe UI"
+                      size="24.0"/>
+            </font>
+        </Label>
+        <Button text="Sign Up"
+                layoutX="100.0"
+                layoutY="300.0"
+                onAction="#onSignupAction"
+                prefWidth="160.0">
+            <font>
+                <Font name="Segoe UI"
+                      size="30.0"/>
+            </font>
+        </Button>
+        <Label text="Author:"
+               layoutX="10.0"
+               AnchorPane.bottomAnchor="15.0">
+            <font>
+                <Font name="Segoe UI"
+                      size="14.0"/>
+            </font>
+        </Label>
+        <Label text="Kamil Bałaban"
+               layoutX="60.0"
+               AnchorPane.bottomAnchor="15.0">
+            <font>
+                <Font name="Segoe UI"
+                      size="14.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
+    <GridPane AnchorPane.leftAnchor="300.0"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              alignment="CENTER">
+        <VBox spacing="20"
+              alignment="CENTER">
+            <Label text="Log In"
+                   BorderPane.alignment="TOP_CENTER"
+                   style="-fx-padding: 0 0 60 0;">
+                <font>
+                    <Font name="Segoe UI"
+                          size="36.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="loginTextField"
+                       promptText="username"
+                       prefWidth="340.0"
+                       prefHeight="40.0">
+                <font>
+                    <Font name="Segoe UI"
+                          size="20.0"/>
+                </font>
+            </TextField>
+            <PasswordField fx:id="passwordTextField"
+                           promptText="password"
+                           prefWidth="340.0"
+                           prefHeight="40.0">
+                <font>
+                    <Font name="Segoe UI"
+                          size="20.0"/>
+                </font>
+            </PasswordField>
+            <Button text="Log In"
+                    prefWidth="100.0"
+                    prefHeight="40.0"
+                    onAction="#onLoginAction">
+                <font>
+                    <Font name="Segoe UI"
+                          size="20.0"/>
+                </font>
+            </Button>
+        </VBox>
+    </GridPane>
+</AnchorPane>
